@@ -1,0 +1,21 @@
+package com.ccunix.icar.carsComein.dao;
+
+import com.ccunix.icar.carsComein.domain.Carinfo;
+
+public interface Carinfo_DAO_Iface {
+
+	/**
+	 * 通过id取Carinfo对象  不存在则为空
+	 * @param carid
+	 * @return Carinfo对象
+	 * @throws Exception
+	 */
+	public Carinfo IsExisCarInCarinfo(String carid) throws Exception;
+	/**
+	 * 向carinfo表中插入一条进入车辆
+	 * 默认会员为0
+	 * @param carid
+	 * @throws Exception
+	 */
+	public void addCarinfo(String carid) throws Exception;
+}

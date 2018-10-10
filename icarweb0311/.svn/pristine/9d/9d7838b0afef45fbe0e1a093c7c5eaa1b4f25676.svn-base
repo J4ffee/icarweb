@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../css/base.css" rel="stylesheet">
+<link href="../../../css/meau.css" rel="stylesheet">
+<link href="../../../css/admin.css" rel="stylesheet">
+<script src="../../../js/jquery.js"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../js/base_table.js"></script>
+<script type="text/javascript" src="../../../html/admin/page/page.js"></script>
+</head>
+<body>
+<div id="nav" class="btn-group">
+		<span class="label label-default">系统管理>>>管理员>>>查看用戶车辆信息</span>
+	</div>
+<div id="content" align="center">
+	<br>
+	<table class="hovertable" style="top: 20px;width: 800px;height: 400px;">
+<tr>
+	<th>车牌号</th><th>车主</th><th>车辆型号</th><th>进入时间</th><th>离开时间</th><th>停留时间</th><th>是否包月</th>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>艾迪A6</td><td>2017-1-1 12：00：00</td><td>2017-1-2 12：00：00</td><td>3小时</td><td>是</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>艾迪A6</td><td>2017-1-1 12：00：00</td><td>2017-1-2 12：00：00</td><td>3小时</td><td>是</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>艾迪A6</td><td>2017-1-1 12：00：00</td><td>2017-1-2 12：00：00</td><td>3小时</td><td>是</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>艾迪A6</td><td>2017-1-1 12：00：00</td><td>2017-1-2 12：00：00</td><td>3小时</td><td>是</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>艾迪A6</td><td>2017-1-1 12：00：00</td><td>2017-1-2 12：00：00</td><td>3小时</td><td>是</td>
+</tr>
+</table>
+	</div>
+	<div id="page"></div>
+
+	<div id="new_div"></div>
+	<div id="backdiv"></div>
+</body>
+</html>

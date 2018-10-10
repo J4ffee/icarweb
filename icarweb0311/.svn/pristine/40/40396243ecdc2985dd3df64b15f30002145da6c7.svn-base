@@ -1,0 +1,13 @@
+package com.ccunix.icar.carsComein.sevice;
+
+import org.springframework.stereotype.Service;
+
+import com.ccunix.icar.carsComein.domain.Accessinfo;
+@Service
+public interface Accessinfo_Service_Iface {
+
+	public void addAccessinfo(String carid) throws Exception;
+	
+	public Accessinfo queryAccessinfo(String carid) throws Exception;
+
+}

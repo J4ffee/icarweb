@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccunix.icar.carsComein.dao.Accessinfo_DAO_Iface">
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+
+	<parameterMap type="com.ccunix.icar.carsComein.domain.Accessinfo"
+		id="Accessinfo_param"></parameterMap>
+	<resultMap type="com.ccunix.icar.carsComein.domain.Accessinfo"
+		id="Accessinfo_result"></resultMap>
+	<insert id="addAccessinfo1" parameterMap="Accessinfo_param">
+		insert into
+		 accessinfo (carid,intime,existismember) values(#{carid},sysdate，0)
+	</insert>
+	<insert id="addAccessinfo2" parameterMap="Accessinfo_param">
+		insert into
+		 accessinfo (carid,intime,existismember) values(#{carid},sysdate,1)
+	</insert>
+		
+	
+	<update id="addOutAccessinfo1" parameterMap="Accessinfo_param">
+	update accessinfo set outTime=sysdate , pay=30,existismember=0 where carid=#{carid}
+	</update>
+	<update id="addOutAccessinfo2" parameterMap="Accessinfo_param">
+	update accessinfo set outTime=sysdate , pay=0,existismember=1 where carid=#{carid}
+	</update>
+	<select id="getAccessinfo" parameterMap="Accessinfo_param" resultMap="Accessinfo_result">
+		select carid,to_char(intime,'YYYY-MM-DD HH:MI:SS') inTimeStr,to_char(outtime,'YYYY-MM-DD HH:MI:SS') outTimeStr,
+		pay pay,existismember existismember from accessinfo where carid=#{carid} and id=(select max(id) from accessinfo where carid=#{carid})
+	</select>
+</mapper>

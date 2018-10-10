@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.usermanager.dao.Userinfo_DAO_Iface">
+
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+
+	<parameterMap type="com.ccunix.icar.usermanager.domain.Userinfo"
+		id="Userinfo_Param">
+	</parameterMap>
+	<resultMap type="com.ccunix.icar.usermanager.domain.Userinfo" id="Userinfo_Result" />
+
+	<insert id="addUserinfo" parameterMap="Userinfo_Param">
+	insert into userinfo (id,loginname,password,name,role,createtime) 
+	values (loginlog_squence.nextval,#{loginName},#{password},#{name},#{role},sysdate)
+	</insert>
+	
+	<!-- 查询所有管理员、员工信息 -->
+	<select id="queryAllUserInfo" resultMap="Userinfo_Result">
+	select loginname ,password,name,role,createtime from userinfo
+	</select>
+
+
+</mapper>

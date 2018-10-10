@@ -1,0 +1,78 @@
+package com.ccunix.icar.carsComein.domain;
+
+import java.util.Date;
+
+public class Carinfo {
+	private int id;
+	private String carid;
+	private String type;
+	private Date starttime;
+	private Date endtime;
+	private int existismember;
+	private String username;
+	private String userphone;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getCarid() {
+		return carid;
+	}
+
+	public void setCarid(String carid) {
+		this.carid = carid;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Date getStarttime() {
+		return starttime;
+	}
+
+	public void setStarttime(Date starttime) {
+		this.starttime = starttime;
+	}
+
+	public Date getEndtime() {
+		return endtime;
+	}
+
+	public void setEndtime(Date endtime) {
+		this.endtime = endtime;
+	}
+
+	public int getExistismember() {
+		return existismember;
+	}
+
+	public void setExistismember(int existismember) {
+		this.existismember = existismember;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUserphone() {
+		return userphone;
+	}
+
+	public void setUserphone(String userphone) {
+		this.userphone = userphone;
+	}
+}

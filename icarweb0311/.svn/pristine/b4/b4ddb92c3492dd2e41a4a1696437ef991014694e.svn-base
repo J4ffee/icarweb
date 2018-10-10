@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.searchinfo.dao.SearchInfo_DAO_Iface">
+
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+	<resultMap type="com.ccunix.icar.searchinfo.domain.SearchInfo"
+		id="SearchInfo_Result">
+		
+	</resultMap>
+	<parameterMap type="com.ccunix.icar.searchinfo.domain.SearchInfo" id="SearchInfo_Param"></parameterMap>
+	<select id="getAllSearchInfo" resultMap="SearchInfo_Result">
+		select id,
+		carid,intime,outtime,pay,staffid,existismember from accessinfo
+	</select>
+	<delete id="deleteSearchInfo" parameterMap="SearchInfo_Param">
+		delete from accessinfo where id=${id}
+	</delete>
+
+
+</mapper>

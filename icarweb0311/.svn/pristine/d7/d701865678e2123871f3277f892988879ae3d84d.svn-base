@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+.input_size{
+	width: 40px;
+	height: 20px;
+}
+a{color: white;}
+a:link {
+	color: #000000;
+	text-decoration: none
+}
+
+a:visited {
+	color: #000000;
+	text-decoration: none
+}
+
+a:active {
+	color: #000000;
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: none;
+	position: relative;
+	right: 0px;
+	top: 1px
+}
+/* 菜单样式 */
+.TxtList{ list-style:disc ; margin:6px 10px 6px 20px;}
+.Test5study h2{color:white;font-size:14px;height:22px;line-height:22px;background:#337AB7;text-indent:10px;position:relative;border-top: 1px solid #fff;border-bottom: 1px solid #F7BE21; font-weight:normal;cursor:pointer;}
+.Test5study h2 span{font-weight: normal;position:absolute;top:0;right:6px;}
+.Test5study{text-align:center;width:220px;height:auto;margin:10px auto 0px;overflow: hidden;position: absolute;left:2px; }
+/* 表格样式 */
+table.hovertable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+
+}
+table.hovertable th {
+	background-color:#337AB7;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.hovertable tr {
+	background-color:#d4e3e5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+
+
+
+

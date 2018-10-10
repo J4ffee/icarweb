@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.carsite.dao.CarSite_DAO_Iface">
+
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+
+	<parameterMap type="com.ccunix.icar.carsite.domain.CarSite"
+		id="CarSite_Param">
+	</parameterMap>
+	<resultMap type="com.ccunix.icar.carsite.domain.CarSite" id="CarSite_Result" />
+
+	
+	<!-- 查询所有车位你信息 -->
+	<select id="queryAllCarSite" resultMap="CarSite_Result">
+	select id,carid from carspace
+	</select>
+	<select id="queryFreeSpace" resultMap="CarSite_Result">
+		select id,carid from carspace where carId='0'
+	</select>
+	<update id="addCarId" parameterMap="CarSite_Param">
+		update carspace set carid=#{carId} where id=#{id}
+	</update>
+	
+	<update id="moveCarSite" parameterMap="CarSite_Param">
+	  update carspace set carid='0' where carid=#{carId}
+	</update>
+	
+	<update id="addCarSite" parameterMap="CarSite_Param">
+	 	update carspace set carid=#{carId} where id=#{id}
+	</update>
+	
+</mapper>

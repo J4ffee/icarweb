@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../css/base.css" rel="stylesheet">
+<link href="../../../css/meau.css" rel="stylesheet">
+<link href="../../../css/admin.css" rel="stylesheet">
+<script src="../../../js/jquery.js"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../js/base_table.js"></script>
+<script type="text/javascript" src="../../../html/admin/page/page.js"></script>
+</head>
+<body>
+<div id="nav" class="btn-group">
+		<span class="label label-default">系统管理>>>管理员>>>车辆进出记录</span>
+	</div>
+<div id="content" align="center">
+	<br>
+	车牌号：<input type="text" height="20px">
+   <!--  <select class="selectD">
+        <option value="">当天车辆记录 </option>
+        <option value="">本月车辆记录</option>
+    </select> -->
+  <button>搜索</button>
+	<br>
+<table class="hovertable" style="top: 20px;width: 800px;height: 400px;">
+<tr>
+	<th>车牌号</th><th>车主</th><th>车辆型号</th><th>车主电话</th>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>奥迪A6</td><td>13704336513</td>
+</tr>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>奥迪A6</td><td>13704336513</td>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>奥迪A6</td><td>13704336513</td>
+<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>奥迪A6</td><td>13704336513</td>
+	<tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+	<td>吉H8899</td><td>于洋</td><td>奥迪A6</td><td>13704336513</td>
+	</table>
+	</div>
+	<div id="page"></div>
+	<div id="new_div"></div>
+	<div id="backdiv"></div>
+</body>
+</html>

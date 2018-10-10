@@ -1,0 +1,56 @@
+package com.ccunix.icar.carsComein.controller;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.ccunix.icar.carsComein.domain.Accessinfo;
+import com.ccunix.icar.carsComein.sevice.Accessinfo_Service_Iface;
+import com.ccunix.icar.carsComein.util.ToolKit;
+
+/**
+ * Accessinfo 出入信息表 控制层
+ * @author Administrator
+ *
+ */
+@Controller
+@RequestMapping("/carscomein")
+public class AccessinfoController {
+
+	@Resource
+	Accessinfo_Service_Iface accessinfo_Service_Iface;
+	@RequestMapping("/addcars")
+	@ResponseBody
+	public void addCars(HttpServletRequest req,String carid){
+		carid =  req.getParameter("carid");
+		try {
+			System.out.println("添加车辆  controller");
+			accessinfo_Service_Iface.addAccessinfo(carid);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	@RequestMapping("/querycars")
+    @ResponseBody	
+	public Accessinfo queryAccessinfo(HttpServletRequest req, String carid){
+		carid =  req.getParameter("carid");
+		System.out.println("queryAccessinfo1111111");
+		System.out.println(carid);
+		Accessinfo accessinfo = null;
+		try {
+			System.out.println("queryAccessinfo22222222");
+			accessinfo = accessinfo_Service_Iface.queryAccessinfo(carid);
+			
+			return accessinfo;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+}

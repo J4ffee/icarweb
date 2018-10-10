@@ -1,0 +1,127 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- 车辆进入，开始结算 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>车辆进入</title>
+<link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../css/base.css" rel="stylesheet">
+<link href="../../../css/admin.css" rel="stylesheet">
+<script src="../../../js/jquery.js"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../js/base_table.js"></script>
+<script type="text/javascript" src="../../../html/admin/page/page.js"></script>
+</head>
+<body>
+	<div id="nav" class="btn-group">
+		<span class="label label-default">员工界面>>办理包月</span>
+	</div>
+	<div id="fun" class="btn-group" data-toggle="buttons-checkbox">
+		<button class="btn btn-primary" id="delete_systemuser">删除</button>
+		<button class="btn btn-primary" id="new_usernamager">新增</button>
+		<button class="btn btn-primary" id="query_systemuser"
+			style="float: left">查询</button>
+		<input id="querydata" type="text" size="2" class="form-control"
+			style="width: 30%" value="请输入查询关键字......">
+	</div>
+	<div id="content">
+		<div>
+
+			<p style="font-size: 17px; text-align: center; font-weight: bold;">办理包月服务</p>
+		</div>
+		<div>
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="firstname" class="col-sm-5 control-label">车牌号:</label>
+					<div class="col-sm-14">
+						<input type="text" class="form-control" placeholder="请输入車牌" style="width: 200px;">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-5 control-label">车主姓名:</label>
+					<div class="col-sm-14">
+						<input type="text" class="form-control" placeholder="请输入姓名" style="width: 200px;">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-5 control-label">电话号码:</label>
+					<div class="col-sm-14">
+						<input type="text" class="form-control" placeholder="请输入电话号" style="width: 200px;">
+					</div>
+				</div>
+				<div class="form-group">
+				<div class="col-sm-11">
+				<select>
+					<option selected="selected">一个月</option>
+					<option>两个月</option>
+					<option>一个季</option>
+					<option>半年</option>
+					<option>一年</option>
+				</select>
+				<button type="submit" class="btn btn-default">提交</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="reset" class="btn btn-default">重置</button>
+				</div>
+				</div>
+		</form>
+		
+		<div style="padding: 50px;float: left;">
+				
+				
+				</div>
+		<!-- <table style="margin: 0px auto;">
+				<tr>
+					<td>车牌号:</td>
+					<td ><input type="text"></td>
+				</tr>
+				<tr height=20px;>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>车主姓名:</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr height=20px;>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>电话号码:</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr height=20px;>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>包月时长:</td>
+					<td><select>
+							<option selected="selected">一个月</option>
+							<option>两个月</option>
+							<option>一个季</option>
+							<option>半年</option>
+							<option>一年</option>
+					</select></td>
+				</tr>
+				<tr height=20px;>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"><button type="submit">提交</button>&nbsp;&nbsp;
+						<button type="reset">重置</button></td>
+				</tr>
+			</table> -->
+	</div>
+	</div>
+	<div id="page"></div>
+
+	<div id="new_div"></div>
+	<div id="backdiv"></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+$(document).ready(function() {
+	var limits = $("limits").val();
+	if(limits==0){
+		$("#frameleft").html("<frame src='html/admin/main/left2.html' noresize='noresize' frameborder='0'>");
+	}else if(limits==1){
+		$("#frameleft").html("<frame src='html/admin/main/left3.html' noresize='noresize' frameborder='0'>");
+	}
+});

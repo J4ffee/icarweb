@@ -1,0 +1,27 @@
+package com.ccunix.icar.carsComein.dao;
+
+import com.ccunix.icar.carsComein.domain.Accessinfo;
+
+/**
+ * Accessinfo 出入信息表 数据层
+ * @author Administrator
+ *
+ */
+public interface Accessinfo_DAO_Iface {
+
+	/**
+	 * 进入 车辆插入数据库
+	 * @param accessinfo
+	 * @throws Exception
+	 */
+	public void addAccessinfo(String carid) throws Exception;
+	/**
+	 * 离开停车场查询 
+	 * @param carid 车牌号
+	 * @return Accessinfo 出入信息表模型
+	 * @throws Exception
+	 */
+	public Accessinfo queryAccessinfo(String carid) throws Exception;
+	
+	
+ }

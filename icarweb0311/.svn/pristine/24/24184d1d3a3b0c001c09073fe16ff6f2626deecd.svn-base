@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccunix.icar.carsComein.dao.Accessinfo_DAO_Iface">
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+
+	<parameterMap type="com.ccunix.icar.carsComein.domain.Accessinfo"
+		id="Accessinfo_param"></parameterMap>
+	<insert id="addAccessinfo" parameterMap="Accessinfo_param">
+		insert into
+		 accessinfo(carid,intime) values(#{carid},sysdate())
+	</insert>
+	<resultMap type="com.ccunix.icar.carsComein.domain.Accessinfo"
+		id="Accessinfo_result"></resultMap>
+	<select id="queryAccessinfo" resultMap="Accessinfo_result">
+		select
+		 a.carid,intime,outtime,pay,c.existismember from accessinfo a,carinfo c where 
+		  a.carid = c.carid and a.carid = #{carid}
+	</select>
+
+</mapper>

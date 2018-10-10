@@ -1,0 +1,7 @@
+package com.ccunix.icar.carsite.dao;
+
+import java.util.List;
+
+public interface CarSite_DAO_Iface {
+	public List queryAllCarSite(); 
+}

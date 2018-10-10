@@ -1,0 +1,9 @@
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:sysstone
+username=tea
+password=tea123456
+initialSize=0
+maxActive=20
+maxIdle=20
+minIdle=1
+maxWait=60000

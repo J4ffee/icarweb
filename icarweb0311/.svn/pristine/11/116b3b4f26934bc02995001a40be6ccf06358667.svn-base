@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../css/base.css" rel="stylesheet">
+<script src="../../../js/jquery.js"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../../js/base_table.js"></script>
+<script type="text/javascript" src="./usermanager.js"></script>
+<script type="text/javascript" src="../../../html/admin/page/page.js"></script>
+<script type="text/javascript" src="top.js"></script>
+
+</head>
+<body>
+	<table border="1" class="table table-striped" style="width: 100%">
+
+		<tr>
+			<td>登录名<input type="hidden" id="id"></td>
+			<td><input id="login_name" type="text" size="2"
+				class="form-control" style="width: 30%"></td>
+		</tr>
+		<tr>
+			<td>密码</td>
+			<td><input id=password type="text" size="2" class="form-control"
+				style="width: 30%"></td>
+		</tr>
+		<tr>
+			<td>权限</td>
+			<td><select id="roleId">
+			<option>管理员</option>
+			<option>员工</option>
+			</select></td>
+		</tr>
+
+	</table>
+</body>
+</html>

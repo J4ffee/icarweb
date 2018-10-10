@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.ccunix.icar.usermanager.dao.Userinfo_Dao" >
+	
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+	
+	<parameterMap type="com.ccunix.icar.usermanager.domain.Userinfo" id="userinfo_parm"></parameterMap>
+	
+	<resultMap type="com.ccunix.icar.usermanager.domain.Userinfo" id="userinfo_result"></resultMap>
+	
+	<insert id="addUserinfo" parameterMap="userinfo_parm">
+		insert into userinfo (id,carid,type,username,userphone,starttime,endtime,existismember) values
+		(#{id },#{carid },#{type },#{username },#{userphone },#{starttime },#{endtime },#{existismember})
+	</insert>
+	
+	<select id="queryAllUserinfo" resultMap="userinfo_result" parameterMap="userinfo_parm">
+		select id,carid,type,username,userphone,
+		to_char(starttime,'YYYY-MM-DD HH:MI:SS') starttime_str,to_char(endtime,'YYYY-MM-DD HH:MI:SS') endtime_str,
+		existismember from userinfo where 1=1 
+		<if test="username !=null and username!=''">
+			 AND username LIKE '%${username}%' 
+		</if>
+		<if test="id!=null and id!='' ">
+			and id=#{id }
+		</if>
+	</select>
+	
+	<delete id="delUserinfo" parameterMap="userinfo_parm">
+		delete from userinfo where id=#{id }
+	</delete>
+	
+	<update id="updateUserinfo" parameterMap="userinfo_parm">
+		update userinfo set username=#{username },userphone=#{userphone },endtime=#{endtime } where id=#{id }
+	</update>
+
+	
+	
+		
+
+
+	</mapper>

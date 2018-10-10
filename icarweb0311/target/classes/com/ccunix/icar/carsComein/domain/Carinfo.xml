@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccunix.icar.carsComein.dao.Carinfo_DAO_Iface">
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+
+	<parameterMap type="com.ccunix.icar.carsComein.domain.Carinfo"
+		id="carinfo_param">
+		</parameterMap>
+		
+	<resultMap type="com.ccunix.icar.carsComein.domain.Carinfo"
+		id="carinfo_result"></resultMap>
+	<select id="getVipInfo" parameterType="com.ccunix.icar.carsComein.domain.Carinfo" resultMap="carinfo_result">
+		select id, carid,startTime,to_char(startTime,'YYYY-MM-DD HH:MI:SS') startTime_str,endTime,to_char(endTime,'YYYY-MM-DD HH:MI:SS') endTime_str,
+		 existismember from carinfo where carid=#{carId}
+	</select>
+	
+	<update id="updateCarinfo" parameterMap="carinfo_param"  >
+		update carinfo set starttime=sysdate, endtime=#{endTime} where carid=#{carId}
+	</update>
+
+</mapper>

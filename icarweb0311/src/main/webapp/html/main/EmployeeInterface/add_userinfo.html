@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../../css/base.css" rel="stylesheet">
+<script src="../../../js/jquery.js"></script>
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="ToBeMember.js"></script>
+<style type="text/css">
+	tr{
+	height:20px;
+	}
+</style>
+</head>
+<body>
+
+
+	<table border="1" class="table table-striped" style="width: 100%">
+		<tr style="height: 10px;">
+			<td>车牌号</td>
+			<td><input id="carid" type="text" size="2" class="form-control"
+				style="width: 50%" onblur="isVehicleNumber()"></td>
+		</tr>
+		<tr>
+			<td>车型</td>
+			<td><input id="type" type="text" size="2" class="form-control"
+				style="width: 50%"></td>
+		</tr>
+		<tr>
+			<td>车主姓名</td>
+			<td><input id="username" type="text" size="2" class="form-control"
+				style="width: 50%" ></td>
+		</tr>
+		<tr>
+			<td>车主电话号</td>
+			<td><input id="userphone" type="text" size="2" class="form-control"
+				style="width: 50%" onblur="Checkreg()"></td>
+		</tr>
+		<!-- <tr>
+			<td>办理时间</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>截止时间</td>
+			<td><input id="endtime" type="text" size="" class="form-control"
+				style="width: 50%"></td>
+		</tr>-->
+		<tr> 
+		
+			<td>办理时长</td>
+			<td><select id="duration" class="form-control" style="width: 50%;">
+					<option selected="selected" value="1">一个月</option> 
+					<option value="3">三个月</option> 
+					<option value="6">半年</option> 
+					<option value="12">一年</option> 
+				</select> 
+			</td>
+		</tr>
+		<tr> 
+		
+			<td>是否为会员</td>
+			<td><select class="form-control" style="width: 50%;">
+					<option selected="selected" id="existismember" class="form-control"  value="1">是</option> 
+				</select> 
+			</td>
+		</tr>
+
+	</table>
+
+
+</body>
+</html>

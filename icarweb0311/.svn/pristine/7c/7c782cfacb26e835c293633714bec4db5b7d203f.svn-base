@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccunix.icar.login.dao.StaffInfo_DAO_Iface">
+
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+	<resultMap type="com.ccunix.icar.login.domain.StaffInfo"
+		id="StaffInfo_Result">
+		
+	</resultMap>
+	<parameterMap type="com.ccunix.icar.login.domain.StaffInfo" id="StaffInfo_Param"></parameterMap>
+	<select id="loginValidate" resultMap="StaffInfo_Result" parameterMap="StaffInfo_Param">
+		select staffid loginName ,password loginPassword,limits limits from staffinfo where staffid=#{loginName} and password = #{loginPassword} 
+	</select>
+	
+
+
+</mapper>

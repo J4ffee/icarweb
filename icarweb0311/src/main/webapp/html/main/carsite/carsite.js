@@ -1,0 +1,22 @@
+$(document).ready(function() {
+	query();
+});
+
+function query(){
+	$.ajax({
+		url : "/maven_project/carsite/queryAllCarSite.action",
+		dataType : "json",
+		type : "post",
+		success : function(data) {
+			$(data).each(
+					function(i, d) {
+						if(d["carId"]!='0'){
+							$("#t"+d["id"]).css("background-color","red");
+						}
+					});
+		},
+		error : function(err) {
+			alert("err");
+		}
+	});
+}

@@ -1,0 +1,15 @@
+package com.ccunix.icar.employeeManage.service;
+
+import java.util.List;
+
+import com.ccunix.icar.employeeManage.domain.employeeDomain;
+
+public interface Employee_Service_iface {
+	public void addEmp(employeeDomain emp) throws Exception;
+	public List queryAllUserInfo() throws Exception;
+	public List query_one(employeeDomain emp) throws Exception;
+	public List queryEmp_by(employeeDomain obj) throws Exception;
+	public void editEmp(employeeDomain empDomain) throws Exception;
+	public List queryEmp_by_id(employeeDomain obj) throws Exception;
+	public void deleteEmp(employeeDomain empDomain) throws Exception;
+}

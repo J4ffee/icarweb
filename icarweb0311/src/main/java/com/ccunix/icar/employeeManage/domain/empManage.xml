@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccunix.icar.employeeManage.dao.empManage_Dao">
+	<cache type="com.ccunix.icar.base.util.RedisCache" />
+	<parameterMap type="com.ccunix.icar.employeeManage.domain.employeeDomain" id="emp_param"></parameterMap>
+	<resultMap type="com.ccunix.icar.employeeManage.domain.employeeDomain" id="emp_result">
+	</resultMap>
+	<insert id="addEmp" parameterMap="emp_param">
+  		insert into staffinfo(id,staffid,password,name,idcard,phone,role) values(#{id},#{login_name},#{login_pass},#{name},#{idcard},#{phone},#{role})
+    </insert> 
+ 
+	<select id="queryAllUserInfo" resultMap="emp_result">
+	  select id,staffid login_name,name name,role,idcard,phone from staffinfo
+	</select>
+	<select id="queryEmp_by" resultMap="emp_result" parameterMap="emp_param">
+	  select id,staffid login_name,name,role,idcard,phone from staffinfo where staffid LIKE '%${login_name}%' or name LIKE '%${name}%' or role LIKE '%${role}%' or idcard LIKE '%${idcard}%' or phone LIKE '%${phone}%'
+	</select>
+	<select id="queryEmp_by_id" resultMap="emp_result" parameterMap="emp_param">
+	  select id,staffid login_name,name,role,idcard,phone from staffinfo where id = #{id}
+	</select>
+	<update id="editEmp" parameterMap="emp_param">
+	  update staffinfo set staffid=#{login_name},name=#{name},role=#{role},idcard=#{idcard},phone=#{phone} where id=#{id}
+	</update>
+	<delete id="deleteEmp" parameterMap="emp_param">
+	  delete from staffinfo where id=#{id}
+	</delete>
+	<select id="query_one" resultMap="emp_result" parameterMap="emp_param">
+	  select id,staffid login_name,name,role,idcard,phone from staffinfo where staffid = #{login_name}
+	</select>
+
+</mapper>

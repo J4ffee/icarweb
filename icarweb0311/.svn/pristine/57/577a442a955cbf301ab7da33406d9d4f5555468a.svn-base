@@ -1,0 +1,64 @@
+package com.ccunix.icar.carsComein.sevice;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ccunix.icar.carsComein.dao.Accessinfo_DAO_Iface;
+import com.ccunix.icar.carsComein.dao.Carinfo_DAO_Iface;
+import com.ccunix.icar.carsComein.domain.Accessinfo;
+import com.ccunix.icar.carsComein.domain.Carinfo;
+import com.ccunix.icar.carsComein.util.ToolKit;
+
+@Service
+@Transactional
+public class Accessinfo_Service_Impl implements Accessinfo_Service_Iface{
+
+	@Resource
+	Accessinfo_DAO_Iface accessinfo_DAO_Iface;
+	@Resource
+	Carinfo_DAO_Iface carinfo_DAO_Iface;
+	@Override
+	public void addAccessinfo(String carid) throws Exception {
+		System.out.println(" 添加车辆 service ");
+		Carinfo carinfo = carinfo_DAO_Iface.IsExisCarInCarinfo(carid);
+		System.out.println(carinfo);
+		/**
+		 * 判断carinfo是否存在
+		 * 1.则向数据库中插入一条 然后在添加Accessinfo
+		 * 2.直接添加在accessinfo中
+		 */
+		if(carinfo==null){
+			carinfo_DAO_Iface.addCarinfo(carid);
+		}
+		
+		accessinfo_DAO_Iface.addAccessinfo(carid);
+	}
+	
+	
+	@Override
+	public Accessinfo queryAccessinfo(String carid) throws Exception {
+		System.out.println("查询车辆 service...............");
+		//1从车 表中查询 看是否包月
+		Accessinfo accessinfo = accessinfo_DAO_Iface.queryAccessinfo(carid);
+		//2
+		//不包月  
+		System.out.println(accessinfo.getExistismember());
+		System.out.println(accessinfo.getCarid());
+		if(accessinfo.getExistismember()==0){
+			accessinfo.setPay(30.00*(ToolKit.towDatesDelay(accessinfo.getIntime(), accessinfo.getOuttime())));
+		}
+		return accessinfo;
+	}
+	public static void main(String[] args) {
+		Accessinfo_Service_Impl accessinfo_Service_Impl  = new Accessinfo_Service_Impl();
+		try {
+			Accessinfo accessinfo = accessinfo_Service_Impl.queryAccessinfo("1111");
+			System.out.println(accessinfo.getOuttime());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
